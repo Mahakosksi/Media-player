@@ -1,0 +1,295 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:wght@400;500;600&display=swap');
+
+   
+   
+   body{
+      background-color: #171717;
+    }
+    ul{
+      display: flex;
+      justify-content: center;
+      text-align: center;
+      
+    }
+    li{
+      margin: 13px;
+      display: inline-block;
+      height: 15px;
+      width: 15px;
+      
+      display: flex;
+      justify-content:right;
+      align-items: center;
+      border-radius: 162px;
+      background:  #252525;
+      
+      cursor: pointer;
+
+
+
+
+    }
+    
+    i{
+      font-size: 2em;
+    }
+    
+
+    #vari{
+      margin-bottom: 10px;
+    }
+    #wrapper{
+        display:flex;
+        position: inherit;
+        height: 700px;
+    }
+    #up{
+        flex:5 1 0;
+        
+    }
+
+    #bar{
+        flex:1 1 0;
+        height: 100%; 
+        overflow-y: auto;
+        
+       
+    }
+    #bar2{
+      width: 190px;
+      
+     
+  }
+
+   #wrapper3{
+    
+   width:3px;
+   
+   
+
+   }
+    #wrapper2{
+        display: flex;
+        margin-left: 450px;
+    }
+    fieldset {
+      
+        background-color: #171717;
+        
+         border: 0.5px solid greenyellow;
+         -moz-border-radius: 8px;
+         -webkit-border-radius: 8px;
+         border-radius: 3px;
+
+
+     }
+     #t{
+      border-color:greenyellow;
+     }
+     #fieldp{
+      border-color:rgb(19, 234, 19);
+      
+      background-color: #252525;
+     }
+     #player{
+      margin-bottom: 10px;
+      background-color: #252525;
+      border-color:#252525 ;
+    }
+    .videos{
+      overflow-y: auto;
+    }
+     .play{
+      background-color: #171717;
+     
+      border-color: #babcbc;
+      
+      
+     }
+     legend{
+         color: #babcbc;;
+         font-style: italic;
+         font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+         text-align: center;
+        
+     }
+     #other{
+         justify-content: flex-end;
+     }
+     label{
+        color: #babcbc;
+        font-style: italic;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+       
+     }
+     a{
+        color: #babcbc;
+        font-style: italic;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+       
+     }
+     p{
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        color: #1bdede;
+        -moz-border-radius: 8px;
+        -webkit-border-radius: 8px;
+        border-radius: 8px; 
+        font-size: 15px;
+        
+     }
+     button{
+        background-color: #252525;
+        color: #babcbc;
+        border: 0.5px solid #babcbc;
+        -moz-border-radius: 8px;
+        -webkit-border-radius: 8px;
+        border-radius: 2px; 
+        font-size: 15px;
+        cursor: pointer;
+     }
+     #imagesub{
+      background-color: green;
+      color: white;
+      border: 0.5px solid #babcbc;
+      -moz-border-radius: 8px;
+      -webkit-border-radius: 8px;
+      border-radius: 2px; 
+      font-size: 15px;
+      cursor: pointer;
+     }
+     button:hover{
+        background-color:green;
+      }
+      
+      button:focus{
+        background-color:green;
+      }
+      a:hover{
+        color:green;
+      }
+      
+      a:focus{
+        color:green;
+      }
+      p:hover{
+        color:green;
+        cursor: pointer;
+      }
+      
+      p:focus{
+        color:green;
+        cursor: pointer;
+      }
+      b{
+        color: #babcbc;
+        font-style: italic;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        font-size: 15px;
+      }
+      i{
+        color: cadetblue;
+      }
+      input{
+        background-color: #5A5A58;
+      }
+      .modal {
+        display: none; 
+        position: fixed; 
+        z-index: 1; 
+        padding-top: 100px; 
+        left: 0;
+        top: 0;
+        width: 100%; 
+        height: 100%; 
+        overflow: auto; 
+        background-color: rgb(0,0,0); 
+        background-color: rgba(0,0,0,0.4); 
+      }
+      
+      
+      .modal-content {
+        background-color: #252525;
+        margin: auto;
+        padding: 20px;
+        border: 1px solid #252525;
+        width: 40%;
+      }
+      
+     
+      .close {
+        color: #aaaaaa;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+      }
+      
+      .close:hover,
+      .close:focus {
+        color: #000;
+        text-decoration: none;
+        cursor: pointer;
+      }
+      .modals {
+        display: none; 
+        position: fixed; 
+        z-index: 1;
+        padding-top: 100px; 
+        left: 0;
+        top: 0;
+        width: 100%; 
+        height: 100%; 
+        overflow: auto;
+        background-color: rgb(0,0,0);
+        background-color: rgba(0,0,0,0.4); 
+      }
+      
+    
+      .modal-contents {
+        background-color: #252525;
+        margin: auto;
+        padding: 20px;
+        border: 1px solid #252525;
+        width: 40%;
+      }
+      
+     
+      .closes {
+        color: #aaaaaa;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+      }
+      
+      .closes:hover,
+      .closes:focus {
+        color: #000;
+        text-decoration: none;
+        cursor: pointer;
+      }
+      #volumef
+      {
+        border-color: #080707;
+        background-color: #252525;
+      }
+      #outilsf
+      {
+        border: 0;
+        border-color: #252525;
+       
+      }
+      #addf
+      {
+        border-color: #252525;
+        width: 100px;
+        justify-content: flex-end;
+       
+      }
+      #othersf
+      {
+        
+        margin-right: 200px;
+        border-color: #252525;
+       
+      }
+
+

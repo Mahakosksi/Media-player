@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" type="text/css" href="Css/image_player_essai.css" />
+        <title>Images player</title>
+        <script src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+      
+
+
+    </head>
+    <style>
+        body{
+    background-color: #171717;
+    }
+.slides{
+    border: 7px solid #252525;
+    display: grid;
+    grid-template-columns: 3fr 1fr ;
+    height: 550px;
+    }
+#canvas {
+    border: 7px solid green;
+    background-color: #171717;
+    border-radius: 5%;
+    margin: 30px;
+    }
+.gp_filter{
+    margin: 15px;
+    padding-left: 30px;
+    padding-top: 20px;
+    border: 1px solid greenyellow;
+    display: flex;
+    border-radius: 5%;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.gp_filter2{
+    float: right;
+    display: grid;
+    margin: 15px;
+    padding-right: 15px;
+    padding-top: 20px;
+    border: 1px solid greenyellow;
+    display: flex;
+    border-radius: 5%;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.filter label{
+   color: #babcbc;
+
+   
+}
+
+#imgId{
+    width: 1200px;
+    height: 450px;
+    border-radius: 5%;
+    text-align:center;
+    padding: 10px;
+
+    display:flex;
+
+}   
+.navigation-manuel{
+    margin-top: 5px;
+    padding: 10px;
+    border: 1px solid #1b1c1b;
+    
+    display: grid;
+   
+    grid-template-columns: 3fr 1fr 5fr 5fr;
+    
+
+}
+.button{
+    display: inline-flex;
+    /*height: 30x;*/
+    border-radius: 3px;
+    background: #161616;
+    border: 0.5px solid #babcbc;
+    text-align:center;
+    overflow: hidden;
+    font-family: 'Quicksand',sans-serif;
+    cursor: pointer;
+
+    
+} 
+#vidplay{
+   
+    display: inline-flex;
+    float: right;
+    width: 130px;
+    height: 30px;
+    /*height: 30x;*/
+    margin: 5%;
+    border-radius: 3px;
+    color: #babcbc;
+    background: green;
+    border: 0.5px solid #babcbc;
+    text-align:center;
+    overflow: hidden;
+    font-family: 'Quicksand',sans-serif;
+    cursor: pointer;
+
+    
+
+}
+.button:hover{
+    background:green ;
+}
+.button:active{
+    background: #171717;
+}
+.button_icon{
+    margin: 2px;
+    padding-right: 8px;
+    padding-left: 2px;
+    color: #babcbc;
+}
+.button_text{
+    padding: 3px;
+    font-size:12px;
+    color: #babcbc;
+}
+
+.ensemble_btn{
+    background-color: #1a1919;
+    padding-left: 9px;
+    padding-top: 5px;
+    padding-bottom: 3px;
+    width: 345px;
+    height: 28px;
+    
+
+}
+.img_pl{
+    color: #babcbc;
+    text-align: center;
+    font-size: bold;
+    font-size: 15px;
+    padding: 5px;
+    margin-left: 5px;
+    width: 90px;
+    height: 25px;
+    background-color: #252525;
+}
+.formfile{
+   
+    width: 142px;
+    margin-left: 100px;
+    padding-left: 12px;
+    padding-top: 8px;
+    background-color: #141414;
+}
+input[type="file"]{
+    display:none;
+}
+.formfile label{
+    cursor: pointer;
+    color: #babcbc;
+    background-color: #252525;
+    border-radius: 3px;
+    border: 0.5px solid #babcbc;
+    text-align:center;
+    overflow: hidden;
+    font-family: 'Quicksand',sans-serif;
+    font-size: 12px;
+    padding: 3px;
+    width: 300px;
+    margin-right: 3px;
+
+}
+
+#submit{
+    cursor: pointer;
+    color: #252525;
+    border-radius: 3px;
+    border: 0.5px solid green;
+    text-align:center;
+    overflow: hidden;
+    font-family: 'Quicksand',sans-serif;
+}
+
+
+    </style>
+  
+    <body>
+        <div class="slider">
+            <div class="slides">
+            
+                <figure id="canvas">
+                  <img src= "" id="imgId">
+
+                </figure>
+                <div class="gp_filter">
+                    <div class="filter" id="filter">
+                        <span class="button_icon">
+                            <ion-icon name="sparkles-outline"></ion-icon>
+                        </span>
+                        <label for="blur">Vague</label>
+                        <input type="range" min="0" max="200" value="0" step="0.1"
+                        id="blur">
+                    </div>
+
+                    <div class="filter" id="filter">
+                        <span class="button_icon">
+                            <ion-icon name="invert-mode-outline"></ion-icon>
+                        </span>
+                        <label for="contrast">Contrast</label>
+                        <input type="range" min="0" max="200" value="100" id="contrast">
+                    </div>
+
+                    <div class="filter" id="filter">  
+                        <span class="button_icon">
+                            <ion-icon name="sparkles-outline"></ion-icon>
+                        </span>
+                        <label for="hue-rotate">Color change</label>
+                        <input type="range" min="0" max="360" value="0" id="hue-rotate">
+                    </div> 
+
+                    <div class="filter" id="filter">
+                        <span class="button_icon">
+                            <ion-icon name="sunny-outline"></ion-icon>
+                        </span>
+                        <label for="sepia">Shadow</label>
+                        <input type="range" min="0" max="100" value="0" id="sepia">
+                    </div>
+                </div>
+
+
+                <canvas id="canvass" width="100" height="100">
+                    <img src="" id="imagesource">
+                </canvas>
+
+                               
+             
+
+            </div>
+            <div class="navigation-manuel">
+                <span class="img_pl">Image Player</span>
+                <div class="ensemble_btn">
+                    <!-- Bouton pour passer a l image suivante-->
+                    <button value="Next" id="next" class="button">
+                        <span class="button_icon">
+                            <ion-icon name="arrow-back-outline"></ion-icon>
+                        </span>
+                        <span class="button_text">Next</span>
+                    </button>
+                    <!-- Bouton pour passer a l image d avant-->
+                    <button value="Back" id="back" class="button">
+                        <span class="button_icon">
+                            <ion-icon name="arrow-forward-outline"></ion-icon>
+                        </span>
+                        <span class="button_text">Previous</span>
+                    </button>
+                    <!-- Bouton pour enregistrer  l image apres modification-->
+                    <button value="Save Image" id="save" class="button">
+                        <span class="button_icon">
+                            <ion-icon name="download-outline"></ion-icon>
+                        </span>
+                        <span class="button_text">Save</span>
+                    </button>
+                    <!-- Bouton pour supprimer l image en cours-->
+                    <button value="Delete Image" id="delete" class="button">
+                        <span class="button_icon">
+                            <ion-icon name="trash-outline"></ion-icon>
+                        </span>
+                        <span class="button_text">Delete</span>
+                    </button>
+
+                    
+
+
+                    
+                </div>
+                
+               
+
+                
+
+                
+
+
+            </div>
+            <div class="gp_filter2">
+                
+                <div class="formfile">
+                    <form action="/img" enctype="multipart/form-data" method=post>
+                        <input type="file" id="uploader"  name="uploader" accept="Image/*">
+                        <label for="uploader">Choose Image</label> 
+                        <input type="submit" id="submit" value="Add">
+                    </form>
+                </div>
+
+                <form action="/vidPlay" method="get"><input type="submit" id="vidplay" value="Video Player"></form>
+
+                
+
+                
+            </div>
+
+        </div>
+
+        <script src="/socket.io/socket.io.js"></script>
+        <script src="Scripts/img.js"></script>
+        <script> 
+
+        // declaration des variable
+            const socket =io() 
+            var nb=0;
+            var length // longeur de la liste contenat les images
+            var list_img // la liste des images
+            socket.on('hello', function (data) { // réception 'hello'
+                console.log('le premier socket arrive ');
+               
+            });
+
+            socket.on('firstimage', (arg) => { // réception de la premiere image dans la liste 
+                console.log('initialisation ');
+                document.getElementById("imgId" ).src = arg
+            });
+
+            socket.on('src', (arg) => { // reception de la source de l image a afficher
+                console.log('source image recived: '+arg)
+                document.getElementById("imgId" ).src = arg;
+            });
+
+            socket.on('list', (arg) => { // reception de la liste contenant toutes les images
+                console.log('List of images recived: '+arg)
+                list_img=arg
+            });
+
+            socket.on('length', (arg) => { // reception de la longeur de la liste contenant les images
+                console.log('longeur de la list recived: '+arg)
+                length=arg
+            })
+
+            socket.on('deleted', (arg) => { // un retour indiquent la suppression d une image
+                console.log('update: '+arg)
+                alert('image deleted')
+                location.reload();
+            })
+
+
+                            
+            // Ajout evenement boutton next pour passer a l image suivante
+            document.getElementById("next").addEventListener('click', function (e) {
+                console.log('Next button clicked');
+                nb=nb+1;
+                if(nb>(length-1)){nb=0}
+                socket.emit('nb', nb)
+                console.log('nb image emitted : '+nb);
+
+            });
+
+
+            //Ajout evenement boutton back pour revenir a l image precedente
+            document.getElementById("back").addEventListener('click', function (e) {
+                console.log('Back button clicked');
+                nb=nb-1;
+                if(nb<0){nb=(length-1)}
+                socket.emit('nb', nb)
+                console.log('nb image emitted : '+nb);
+            });
+
+            //Ajout evenement boutton save pour enregister l image apres modification
+            document.getElementById("save").addEventListener('click', function (e) {
+                console.log('save button clicked');
+                var url_src= document.getElementById("imgId" ).src
+                socket.emit('save', url_src)
+                console.log('ordre de sauvegarde emitted : '+url_src);
+            });
+            
+            //Ajout evenement button delete pour supprimer une image de la liste
+            document.getElementById("delete").addEventListener('click', function (e) {
+                console.log('delete button clicked');
+                var url_src= document.getElementById("imgId" ).src
+                socket.emit('delete', url_src)
+                console.log('ordre de suppression emitted : '+nb);
+            });
+
+           const canvas =document.getElementById('canvass')
+           const ctx= canvas.getContext("2d")
+           const reader = new FileReader()
+           const img =new Image()
+           const uploadImage =(e)=>{
+               console.log('dans upload funtion')
+               reader.onload=()=>{
+                   img.onload= ()=>{
+                       canvas.width= img.width;
+                       canvas.height=img.height;
+                       ctx.drawImage(img,0,0);
+                   }
+                   document.getElementById("imgId" ).src=reader.result
+                   //img.src=reader.result;
+               }
+               reader.readAsDataURL(e.target.files[0])
+           };
+           const imageLoader=document.getElementById('uploader')
+           imageLoader.addEventListener("change",uploadImage)
+
+           function download(){
+                var url_src= document.getElementById("imgId" ).src
+                console.log(url_src)
+                socket.emit('save', url_src)
+                console.log('ordre de sauvegarde emitted : '+url_src);
+           
+           }
+            document.querySelector('button').addEventListener('click',download)
+  
+
+            function Animation(){
+                for(img in list_img ){
+                    new_src="images/"+list_img[img]
+                    console.log(new_src)
+                    document.getElementById("imgId" ).src = new_src;
+                   
+                
+                }
+            }
+            let filterA=document.getElementById("blur")
+            let filterB=document.getElementById("contrast")
+            let filterC=document.getElementById("hue-rotate")
+            let filterD=document.getElementById("sepia")
+
+            let image = document.getElementById("imgId")
+            console.log(image)
+   
+
+            let sliders = document.querySelectorAll("input");
+            console.log(sliders)
+            sliders.forEach(slider =>{
+                slider.addEventListener('input', addFilter);
+                console.log("dans foreach")
+            })
+            function addFilter(){
+                
+                image.style.filter =`blur(${filterA.value}px) contrast(${filterB.value}%) hue-rotate(${filterC.value}deg) sepia(${filterD.value}%)`;
+                console.log(image.style.filter);
+                console.log("dans la fonction")
+            }
+
+            
+
+        </script>
+        
+
+    </body>
+</html>
