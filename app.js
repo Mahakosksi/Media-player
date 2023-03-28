@@ -169,12 +169,12 @@ app.use(upload());
 app.post('/img', (req, res) => {
 
 
-  let filee = req.files.uploader;
-  let filename = filee.name
-  filee.mv('./images/' + filename, function (err) {
+  let Nomfile = req.files.uploader;
+  let filename = Nomfile.name
+  Nomfile.mv('./images/' + filename, function (err) {
     if (err) { res.send(err); }
   });
-  filee.mv('./imagee/images/' + filename, function (err) {
+  Nomfile.mv('./imagee/images/' + filename, function (err) {
     if (err) { res.send(err); }
   });
   res.redirect('/imagee')
@@ -232,14 +232,14 @@ app.post('/file', (req, res) => {
 
   console.log(maxid)
   var check = []
-  let filee = req.files.location;
-  let filename = filee.name
+  let Nomfile = req.files.location;
+  let filename = Nomfile.name
   console.log("entre")
   console.log(names)
 
   maxid++
   console.log("entre2")
-  filee.mv('./video/' + filename, function (err) {
+  Nomfile.mv('./video/' + filename, function (err) {
     if (err) { res.send(err); }
   });
   var sql = 'insert into video(id,name) values (' + maxid + ',"' + filename + '");'
