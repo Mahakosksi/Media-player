@@ -1,8 +1,9 @@
 var express = require('express');
 var fs = require('fs');
 app = express();
-http = require('http');//chargement du module de base http
+http = require('http');
 path = require('path');
+
 
 const server = http.createServer(function(req,res){
     const fs = require('fs').promises;
