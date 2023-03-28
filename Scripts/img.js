@@ -20,6 +20,9 @@ document.getElementById("next").addEventListener('click', function (e) {
 //event button previous
 document.getElementById("back").addEventListener('click', function (e) {
     console.log('Back button clicked');
+    nb = nb - 1;
+    socket.emit('nb', nb)//emission de socket
+    console.log('le numero d image affichee est : ' + nb);
 
 
 });
