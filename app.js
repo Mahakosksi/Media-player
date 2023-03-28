@@ -4,12 +4,12 @@ var express = require('express');
 app = express();
 http = require('http');
 server = http.createServer(app);
-var fs = require('fs');
+var fs = require('fs');//afin de travailler avec le système de fichiers
 const { Server } = require("socket.io");
 const io = new Server(server);
-path = require('path');
+path = require('path');//travailler avec les chemins de fichiers
 util = require('util');
-upload = require('express-fileupload')
+upload = require('express-fileupload')//pour gérer les téléchargements sur le serveur
 
 
 //Déclaration des variables nécessaires 
