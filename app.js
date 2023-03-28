@@ -43,7 +43,8 @@ var socket1 = io.sockets.on('connection', function (socket) {
   var image = getImagesFromDir(path.join(__dirname, 'images'))
   listImage = image
 
-  //affichage du premiere image disponible, emit pour l'envoyer vers le client
+  
+  //envoie un événement "firstimage" avec un argument "listImage[0]" à une instance de Socket.io, cet event va etre traiter dans image_player.js
   socket.emit('firstimage', listImage[0]);
 
   var longeurListe = listImage.length
