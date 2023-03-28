@@ -2,7 +2,7 @@
 
 var express = require('express');
 app = express();
-http = require('http');
+http = require('http');//chargement du module de base httpp
 server = http.createServer(app);
 var fs = require('fs');//afin de travailler avec le système de fichiers
 const { Server } = require("socket.io");
@@ -35,7 +35,7 @@ connection.connect(function (err) {
   console.log('Connexion etablie avec succes');//connexion reussie
 });
 
-//connexion avec socket.io
+//connexion avec socket.io, qui est utiliser pour établir une connexion réelle entre le client et le serveur
 console.log(__dirname)
 var socket1 = io.sockets.on('connection', function (socket) {
 
@@ -43,7 +43,7 @@ var socket1 = io.sockets.on('connection', function (socket) {
   var image = getImagesFromDir(path.join(__dirname, 'images'))
   listImage = image
 
-  //affichage du premiere image disponible
+  //affichage du premiere image disponible, emit pour l'envoyer vers le client
   socket.emit('firstimage', listImage[0]);
 
   var longeurListe = listImage.length
@@ -77,6 +77,7 @@ var socket1 = io.sockets.on('connection', function (socket) {
   socket.on('delete', (arg) => {
     console.log('src_to_delete_recieved : ' + arg)
     var img_src = listImage[nombre]
+    //unlink pour la s
     fs.unlink(img_src, (err) => {
       if (err) {
         throw err;
