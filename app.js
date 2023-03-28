@@ -1,7 +1,7 @@
 
 
-var express = require('express');
-app = express();
+var express = require('express');//chargement du module express
+app = express();//création d'une instance 
 http = require('http');//chargement du module de base httpp
 server = http.createServer(app);
 var fs = require('fs');//afin de travailler avec le système de fichiers
