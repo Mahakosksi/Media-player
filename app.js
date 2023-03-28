@@ -47,7 +47,7 @@ var socket1 = io.sockets.on('connection', function (socket) {
   socket.emit('firstimage', listImage[0]);
 
   var longeurListe = listImage.length
-  socket.emit('length', longeurListe)
+  socket.emit('length', longeurListe)//envoie la longueur totale de la liste d'images au client.
   socket.on('nb', (arg) => {
 
     console.log('image numero  : ' + arg + ' est chargee ')
@@ -62,7 +62,7 @@ var socket1 = io.sockets.on('connection', function (socket) {
 
   socket.on('sendlist', (arg) => {
     console.log('recieved : ' + arg)
-    socket.emit('list', listImage)
+    socket.emit('list', listImage)//envoie la liste complète des images au client.
 
   })
 
@@ -82,7 +82,7 @@ var socket1 = io.sockets.on('connection', function (socket) {
         throw err;
       }
       console.log('image suppriméé')
-      socket.emit('deleted', arg)
+      socket.emit('deleted', arg)//envoie du msg vers le client pour lui informer 
     })
 
   })
@@ -174,6 +174,7 @@ app.post('/img', (req, res) => {
   Nomfile.mv('./images/' + filename, function (err) {
     if (err) { res.send(err); }
   });
+  //deplacer le fichier vers le repertoire 
   Nomfile.mv('./imagee/images/' + filename, function (err) {
     if (err) { res.send(err); }
   });
@@ -210,7 +211,7 @@ var maxid = 0;
 var names = []
 
 
-
+//enregistrement du video dans la base de données
 connection.query('select * from video', function (err, results) {
   for (i = 0; i < results.length; i++) {
     names.push(results[i]['name'])
@@ -237,7 +238,7 @@ app.post('/file', (req, res) => {
   console.log("entre")
   console.log(names)
 
-  maxid++
+  maxid++//incrémenter pour que la video ait un ID unique
   console.log("entre2")
   Nomfile.mv('./video/' + filename, function (err) {
     if (err) { res.send(err); }
@@ -259,7 +260,7 @@ app.post('/files', function (req, res) {
   connection.query('delete from video where name="' + filedelete + '";')
 
 
-  res.redirect('/')
+  res.redirect('/')//redirection vers la page d'accueil
 
 });
 
