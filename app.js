@@ -177,9 +177,7 @@ app.post('/img', (req, res) => {
     if (err) { res.send(err); }
   });
   //deplacer le fichier vers le repertoire 
-  Nomfile.mv('./imagee/images/' + filename, function (err) {
-    if (err) { res.send(err); }
-  });
+  
   res.redirect('/imagee')
 });
 
