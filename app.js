@@ -177,13 +177,15 @@ app.post('/img', (req, res) => {
     if (err) { res.send(err); }
   });
   //deplacer le fichier vers le repertoire 
-  
+  Nomfile.mv('./imagee/images/' + filename, function (err) {
+    if (err) { res.send(err); }
+  });
   res.redirect('/imagee')
 });
 
 //chargement des images à partir du dossier
 function getImagesFromDir(dirPath) {
-  let allImages = []
+  
   let files = fs.readdirSync(dirPath)
 
   for (file in files) {
@@ -257,7 +259,7 @@ app.post('/files', function (req, res) {
   var filedelete = req.body.name
 
   names.pop(filedelete);
-  connection.query('delete from video where name="' + filedelete + '";')
+  connection.query('delete from video where name="' + filedelete + '";')//uppression de la bdd
 
 
   res.redirect('/')//redirection vers la page d'accueil
