@@ -194,41 +194,7 @@ input[type="file"]{
                 <img src="" id="imgId">
 
             </figure>
-            <div class="gp_filter">
-                <div class="filter" id="filter">
-                    <span class="button_icon">
-                        <ion-icon name="sparkles-outline"></ion-icon>
-                    </span>
-                    <label for="blur">Vague</label>
-                    <input type="range" min="0" max="200" value="0" step="0.1" id="blur">
-                </div>
-
-                <div class="filter" id="filter">
-                    <span class="button_icon">
-                        <ion-icon name="invert-mode-outline"></ion-icon>
-                    </span>
-                    <label for="contrast">Contrast</label>
-                    <input type="range" min="0" max="200" value="100" id="contrast">
-                </div>
-
-                <div class="filter" id="filter">
-                    <span class="button_icon">
-                        <ion-icon name="sparkles-outline"></ion-icon>
-                    </span>
-                    <label for="hue-rotate">Color change</label>
-                    <input type="range" min="0" max="360" value="0" id="hue-rotate">
-                </div>
-
-                <div class="filter" id="filter">
-                    <span class="button_icon">
-                        <ion-icon name="sunny-outline"></ion-icon>
-                    </span>
-                    <label for="sepia">Shadow</label>
-                    <input type="range" min="0" max="100" value="0" id="sepia">
-                </div>
-            </div>
-
-
+            
             <canvas id="canvass" width="100" height="100">
                 <img src="" id="imagesource">
             </canvas>
@@ -421,31 +387,7 @@ input[type="file"]{
 
             }
         }
-        let filterA = document.getElementById("blur")
-        let filterB = document.getElementById("contrast")
-        let filterC = document.getElementById("hue-rotate")
-        let filterD = document.getElementById("sepia")
-
-        let image = document.getElementById("imgId")
-        console.log(image)
-
-
-        let sliders = document.querySelectorAll("input");
-        console.log(sliders)
-        sliders.forEach(slider => {
-            slider.addEventListener('input', addFilter);
-            console.log("dans foreach")
-        })
-        //ajout des filtres
-        function addFilter() {
-
-            image.style.filter = `blur(${filterA.value}px) contrast(${filterB.value}%) hue-rotate(${filterC.value}deg) sepia(${filterD.value}%)`;
-            console.log(image.style.filter);
-            console.log("dans la fonction")
-        }
-
-
-
+       
     </script>
 
 
